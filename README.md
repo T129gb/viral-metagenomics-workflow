@@ -1,4 +1,4 @@
-<img width="146" height="25" alt="image" src="https://github.com/user-attachments/assets/0f2b24c9-7a6d-463b-9df4-3901eafd2adb" /># viral-metagenomics-workflow
+# viral-metagenomics-workflow
 
 This script is for analysing viral metagenomic sequencing data.
 
@@ -27,10 +27,12 @@ fasterq-dump "$sra" -O "$FASTQ" -t "$SCRATCH" -e "$THREADS" -f
 ```
 
 ## Step 3: run esviritu
-
+```bash
+echo "source /home/tjh/miniconda3/bin/activate && \
+conda activate EsViritu && \
 EsViritu -r '$fqdir/${j}_1.fastq.gz' '$fqdir/${j}_2.fastq.gz' \
 -s '$j' -o '$outdir/$j' \
 -p paired -q True -t 20 --keep True --db '$db' \
 > '$outdir/logs/${j}.log' 2> '$outdir/logs/${j}.err'"
-
+```
 

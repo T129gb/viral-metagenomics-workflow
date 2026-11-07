@@ -26,7 +26,9 @@ Make sure the variables `sra`, `FASTQ`, `SCRATCH`, and `THREADS` are set before 
 fasterq-dump "$sra" -O "$FASTQ" -t "$SCRATCH" -e "$THREADS" -f
 ```
 
-## Step 3: run esviritu
+## Step 3: Run esviritu
+Make sure the variables are set before running:
+
 ```bash
 echo "source /home/tjh/miniconda3/bin/activate && \
 conda activate EsViritu && \
